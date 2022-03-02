@@ -6,6 +6,7 @@ $font: "PT Sans", sans-serif;
 // Font sizes
 $logo-size: 36px;
 $heading-size: 24px;
+$regular-size: 16px;
 
 // Colours
 $black: #495159;
@@ -24,13 +25,23 @@ $pink-gradient-outer: linear-gradient(
   rgba(251, 220, 226, 1) 0%,
   rgba(255, 159, 178, 1) 100%
 );
+$green-gradient: linear-gradient(
+  90deg,
+  rgba(96, 171, 154, 0.75) 0%,
+  rgba(202, 253, 190, 1) 100%
+);
 
-// Widths/Heights/Radii
+// Widths/Heights
 $input-width: 295px;
-$border-radius: 10px;
 
 // Margins and Padding
 $body-padding: 24px;
 $header-margin: 28px;
 $small-margin: 12px;
 $input-padding: 8px;
+$card-padding: 14px;
+$card-margin: 35px;
+
+// Misc
+$border-radius: 10px;
+$outline-width: 2px;

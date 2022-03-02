@@ -46,8 +46,41 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
         .search-container__search:hover {
           cursor: pointer;
+        }
+      }
+    }
+  }
+  .cards-container {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, $input-width);
+    grid-auto-rows: $input-width;
+    justify-content: center;
+    column-gap: $card-margin;
+    row-gap: $card-margin;
+
+    .card {
+      max-width: $input-width;
+      width: 100%;
+      padding: $card-padding;
+
+      .card__header {
+        display: flex;
+        align-items: center;
+        margin-bottom: $card-padding;
+
+        .card__phonetic {
+          margin-left: $small-margin;
+          margin-right: auto;
+        }
+      }
+      .card__main {
+        & > ol {
+          margin-left: $card-padding;
         }
       }
     }

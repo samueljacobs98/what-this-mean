@@ -16,9 +16,28 @@ body {
       background: $pink-gradient-inner;
       border-radius: $border-radius;
       border: none;
-      outline: 2px dashed $light-pink;
+      outline: $outline-width dashed $light-pink;
       font-size: $heading-size;
       color: $black;
+    }
+  }
+  .cards-container {
+    margin-top: $header-margin;
+    .card {
+      background: $green-gradient;
+      border-radius: $border-radius;
+
+      .card__header {
+        font-size: $heading-size;
+
+        .card__phonetic {
+          font-size: $regular-size;
+        }
+      }
+
+      .card__main {
+        line-height: 150%;
+      }
     }
   }
 }

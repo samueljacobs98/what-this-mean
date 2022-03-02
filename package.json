@@ -1,0 +1,26 @@
+{
+  "name": "what-this-mean",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch:scss": "sass --watch style.scss style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samueljacobs98/what-this-mean.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samueljacobs98/what-this-mean/issues"
+  },
+  "homepage": "https://github.com/samueljacobs98/what-this-mean#readme",
+  "dependencies": {
+    "scss": "^0.2.4"
+  },
+  "devDependencies": {
+    "sass": "^1.49.9"
+  }
+}

@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap");
+
+// Fonts
+$font: "PT Sans", sans-serif;
+
+// Font sizes
+$logo-size: 36px;
+$heading-size: 24px;
+
+// Colours
+$black: #495159;
+$black-see-through: rgba(73, 81, 89, 0.8);
+$light-pink: #fbdce2;
+$light-green: #cafdbe;
+
+// Gradients
+$pink-gradient-inner: linear-gradient(
+  90deg,
+  rgba(255, 159, 178, 1) 0%,
+  rgba(251, 220, 226, 1) 100%
+);
+$pink-gradient-outer: linear-gradient(
+  90deg,
+  rgba(251, 220, 226, 1) 0%,
+  rgba(255, 159, 178, 1) 100%
+);
+
+// Widths/Heights/Radii
+$input-width: 295px;
+$border-radius: 10px;
+
+// Margins and Padding
+$body-padding: 24px;
+$header-margin: 28px;
+$small-margin: 12px;
+$input-padding: 8px;

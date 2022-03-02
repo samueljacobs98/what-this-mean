@@ -1,0 +1,24 @@
+@use "./variables" as *;
+
+body {
+  .header {
+    .header__logo {
+      color: $light-pink;
+      font-size: $logo-size;
+    }
+  }
+  .search-container {
+    .search-container__instruction {
+      color: $light-green;
+      font-size: $heading-size;
+    }
+    .search-container__input {
+      background: $pink-gradient-inner;
+      border-radius: $border-radius;
+      border: none;
+      outline: 2px dashed $light-pink;
+      font-size: $heading-size;
+      color: $black;
+    }
+  }
+}

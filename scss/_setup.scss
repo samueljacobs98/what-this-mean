@@ -1,0 +1,21 @@
+@use "./variables" as *;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $black-see-through;
+  font-family: $font;
+  padding: $body-padding;
+
+  .body-cover {
+    background-image: url("../assets/images/orange-smoke.jpg");
+    opacity: 0.4;
+  }
+}

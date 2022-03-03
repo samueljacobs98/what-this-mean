@@ -13,7 +13,7 @@ body {
   padding: 24px;
 }
 body .body-cover {
-  background-image: url("../assets/images/orange-smoke.jpg");
+  background-image: url("./assets/images/orange-smoke.jpg");
   opacity: 0.4;
 }
 

@@ -62,14 +62,11 @@ const createCard = (cardData) => {
 
 const createNewCardObject = (wordObject) => {
   const newCardObject = {};
-  // Word
-  newCardObject.word = wordObject.word; // Is this a deep copy?
-  // Phonetic
+  newCardObject.word = wordObject.word;
   newCardObject.phonetic = `[${wordObject.phonetic.substring(
     1,
     wordObject.phonetic.length - 1
   )}]`;
-  // Definition
   newCardObject.definitions = [];
   wordObject.meanings.forEach((meaning) => {
     meaning.definitions.forEach((object) => {

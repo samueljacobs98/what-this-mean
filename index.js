@@ -30,21 +30,43 @@ const createElement = (type, appendLocation, className) => {
   return component;
 };
 
-const createCard = (cardData) => {
-  //   console.log(cardData);
-  const card = createElement("div", container, "card");
-  const cardHeader = createElement("div", card, "card__header");
-  const cardMain = createElement("div", card, "card__main");
-  // Header Components
+const createHeaderComponents = (cardHeader) => {
   const cardWord = createElement("h3", cardHeader, "card__word");
   const cardPhonetic = createElement("p", cardHeader, "card__phonetic");
   const cardRemoverImg = createElement("img", cardHeader, "card__remove");
   cardRemoverImg.setAttribute("src", "./assets/svgs/remove.svg");
   cardRemoverImg.setAttribute("alt", "remove definition");
-  // Main components
+  return [cardWord, cardPhonetic];
+};
+
+const writeHeaderComponents = (word, phonetic, locations) => {
+  locations[0].innerText = word;
+  locations[1].innerText = phonetic;
+};
+
+const createMainComponents = (cardMain) => {
   const cardDefinitionTitle = createElement("p", cardMain, "card__defintion");
   cardDefinitionTitle.innerText = "Definition:";
   const cardOl = createElement("ol", cardMain);
+  return cardOl;
+};
+
+const writeDefinitions = (definitions, location) => {
+  definitions.forEach((definition) => {
+    location.innerHTML += `<li>${definition}</li?`;
+  });
+};
+
+const createCard = (cardData) => {
+  const card = createElement("div", container, "card");
+  const cardHeader = createElement("div", card, "card__header");
+  const cardMain = createElement("div", card, "card__main");
+
+  const headerComponents = createHeaderComponents(cardHeader);
+  const mainOl = createMainComponents(cardMain);
+
+  writeHeaderComponents(cardData.word, cardData.phonetic, headerComponents);
+  writeDefinitions(cardData.definitions, mainOl);
 };
 
 const createNewCardObject = (wordObject) => {
@@ -77,7 +99,6 @@ const dealWithAddTerm = async () => {
   const searchTerm = searchInput.value;
   const newVocabObject = await getDefinition(searchTerm);
   const cardObject = createNewCardObject(newVocabObject);
-  //   console.log(cardObject);
   createCard(cardObject);
 };
 

@@ -67,6 +67,7 @@ body {
       max-width: $input-width;
       width: 100%;
       padding: $card-padding;
+      overflow: auto;
 
       .card__header {
         display: flex;

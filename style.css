@@ -78,6 +78,7 @@ body .cards-container .card {
   max-width: 295px;
   width: 100%;
   padding: 14px;
+  overflow: auto;
 }
 body .cards-container .card .card__header {
   display: flex;

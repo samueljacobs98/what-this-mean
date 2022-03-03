@@ -13,7 +13,7 @@ body {
   padding: 24px;
 }
 body .body-cover {
-  background-image: url("./assets/images/orange-smoke.jpg");
+  background-image: url("../assets/images/orange-smoke.jpg");
   opacity: 0.4;
 }
 
@@ -140,5 +140,3 @@ body .cards-container .card .card__header .card__remove:hover {
 body .cards-container .card .card__main {
   line-height: 150%;
 }
-
-/*# sourceMappingURL=style.css.map */

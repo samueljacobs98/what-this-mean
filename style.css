@@ -33,6 +33,9 @@ body .body-cover {
 body .header {
   text-align: center;
 }
+body .search-container {
+  position: relative;
+}
 body .search-container .search-container__instruction {
   text-align: center;
   margin-top: 28px;
@@ -109,6 +112,15 @@ body .search-container .search-container__input {
   font-size: 24px;
   color: #495159;
 }
+body .search-container .search-container__error {
+  display: none;
+  color: #f1befd;
+  text-align: center;
+  margin-top: 4px;
+}
+body .search-container .search-container__error--show {
+  display: block;
+}
 body .cards-container {
   margin-top: 28px;
 }
@@ -121,6 +133,9 @@ body .cards-container .card .card__header {
 }
 body .cards-container .card .card__header .card__phonetic {
   font-size: 16px;
+}
+body .cards-container .card .card__header .card__remove:hover {
+  cursor: pointer;
 }
 body .cards-container .card .card__main {
   line-height: 150%;

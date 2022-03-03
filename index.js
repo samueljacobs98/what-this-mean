@@ -1,23 +1,9 @@
-// https://dictionaryapi.dev/
-
-// Array of card objects
-// in each card:
-// card__word - word: "perplex"
-// card__phonetic - phonetic: "[per-pleks]"
-// card__definition - definition: ["def1", "def2"]
-
-// cards = [
-//   {
-//     word: "string",
-//     phonetic: "[string]",
-//     definition: "string[array]",
-//   },
-// ];
-
 // Global Variables
 const addTerm = document.querySelector(".search-container__search");
 const searchInput = document.querySelector(".search-container__input");
 const container = document.querySelector(".cards-container");
+const trigger = document.querySelector(".trigger");
+const errorText = document.querySelector(".search-container__error");
 
 // Functions
 
@@ -30,12 +16,17 @@ const createElement = (type, appendLocation, className) => {
   return component;
 };
 
+const removeCard = (card) => {
+  card.parentElement.parentElement.remove();
+};
+
 const createHeaderComponents = (cardHeader) => {
   const cardWord = createElement("h3", cardHeader, "card__word");
   const cardPhonetic = createElement("p", cardHeader, "card__phonetic");
   const cardRemoverImg = createElement("img", cardHeader, "card__remove");
   cardRemoverImg.setAttribute("src", "./assets/svgs/remove.svg");
   cardRemoverImg.setAttribute("alt", "remove definition");
+  cardRemoverImg.setAttribute("onclick", "removeCard(this)");
   return [cardWord, cardPhonetic];
 };
 
@@ -88,9 +79,24 @@ const createNewCardObject = (wordObject) => {
   return newCardObject;
 };
 
+const waitToRemove = () => {
+  setTimeout(() => {
+    errorText.classList.remove("search-container__error--show");
+  }, 5000);
+};
+
+const dealWithError = () => {
+  errorText.classList.add("search-container__error--show");
+  waitToRemove();
+};
+
 const getDefinition = async (possibleWord) => {
   const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${possibleWord}`;
   const response = await fetch(url);
+  if (!response.ok) {
+    dealWithError();
+    return;
+  }
   const data = await response.json();
   return data[0];
 };
@@ -98,6 +104,9 @@ const getDefinition = async (possibleWord) => {
 const dealWithAddTerm = async () => {
   const searchTerm = searchInput.value;
   const newVocabObject = await getDefinition(searchTerm);
+  if (!newVocabObject) {
+    return;
+  }
   const cardObject = createNewCardObject(newVocabObject);
   createCard(cardObject);
 };

@@ -16,6 +16,7 @@ body {
     text-align: center;
   }
   .search-container {
+    position: relative;
     .search-container__instruction {
       text-align: center;
       margin-top: $header-margin;

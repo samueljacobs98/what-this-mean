@@ -20,6 +20,15 @@ body {
       font-size: $heading-size;
       color: $black;
     }
+    .search-container__error {
+      display: none;
+      color: $error;
+      text-align: center;
+      margin-top: $error-margin;
+    }
+    .search-container__error--show {
+      display: block;
+    }
   }
   .cards-container {
     margin-top: $header-margin;
@@ -32,6 +41,9 @@ body {
 
         .card__phonetic {
           font-size: $regular-size;
+        }
+        .card__remove:hover {
+          cursor: pointer;
         }
       }
 

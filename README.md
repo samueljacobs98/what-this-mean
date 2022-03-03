@@ -1,6 +1,6 @@
 # what-this-mean - MyVocab
 
-<!-- ![deployed-website](./assets/images/2048screenshot.png) -->
+![deployed-website](./assets/images/screenshot.png)
 
 ## Project Overview
 
